@@ -1,0 +1,133 @@
+$primario : #F15A24;
+.navbar{
+
+    $ancho : 200px;
+
+    width: $ancho;
+    position: fixed;
+    top: 0px;
+    z-index: 200;
+    height: 100vh;
+    background-color:#363636;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items:center;
+
+    overflow: hidden;
+
+  
+    .usuarioLogeado{
+        width: $ancho;
+        height: 170px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #6026be;
+        margin-bottom: 50px;
+
+        .ul-nombre{
+            margin-top:20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .ul-email{
+            margin-top:-18px;
+            font-size: 12px;
+        }
+
+        .ul-img{
+            position: absolute;
+            transform: translateY(70px);
+            width: 85px;
+            height: 85px;
+            border: 6px solid #363636;
+            border-radius: 100px;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            
+        }
+
+    }
+
+    p{
+        font-size: 20px;
+        color: white;
+
+     
+        
+    }
+
+    
+
+    .menu{
+
+        
+        position: relative;
+        width: $ancho;
+        top: 100hv;
+        //background-color: red;
+        height: 100vh;
+        overflow-y: hidden;
+        padding: 0px;
+       
+
+        
+
+        ul{
+           
+            display:flex;
+            flex-direction: column;
+            list-style: none;
+            margin: 0px;
+            padding: 0px;
+
+          
+            
+           
+
+            li{
+               
+               left: 0px;
+
+            }
+            .logout{
+               
+                background-color:$primario;
+           
+            
+                }   
+
+                a{  
+                    display: block;
+                    height:30px;
+                   
+                    text-decoration: none;
+                    color: white;
+                    font-size: 14px;
+                    padding-left: 30px;
+                    padding-top: 15px;
+
+
+                    transition: background-color 600ms, color 500ms;
+               
+                        
+                    
+                    }
+                    
+                
+
+                a:hover{
+                    
+                    background-color:white;
+                    color: #363636;
+                   
+                }
+            
+        }
+    }
+
+
+
+}

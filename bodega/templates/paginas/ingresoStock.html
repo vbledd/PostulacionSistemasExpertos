@@ -1,0 +1,36 @@
+{% extends "master/master.html" %}
+{% load static %}
+
+
+{%block titulo%}
+Bodegas Ingreso Stock
+{%endblock%}
+
+{%block contenido%}
+
+    <h1>Seleccionar Bodega</h1>
+    <div  id="appBodegas">
+       
+        <table>
+            <tr>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Dirección</th>
+              
+            
+            </tr>
+
+            <tr v-for="items in listadoBodegas" v-on:click="entrar(items.pk)">
+                <td>${items.pk}</td>
+                <td>${items.fields.nombre}</td>
+                <td>${items.fields.direccion}</td>
+                
+    
+            </tr>
+        </table>
+    </div>
+    <script src="{% static 'js/seleccionBodegas.js' %}"></script>
+
+    
+{%endblock %}
+

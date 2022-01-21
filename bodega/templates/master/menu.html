@@ -1,0 +1,25 @@
+{% load static %}  
+
+<nav class="navbar">
+    <div class="usuarioLogeado">
+        
+
+        <p class="ul-nombre">{{request.session.login.nombres}}</p>
+        <p class="ul-email">{{request.session.login.email}}</p>
+        <div class="ul-img" style="background-image: url('{% static 'img/user.png' %}')"></div>
+
+    </div>
+   <p>Sistema de Bodega</p>
+    <div  class="menu">
+        <ul>
+            <li> <a href="{% url 'index' %}"><i class="fas fa-home"></i> Inicio</a> </li>
+            <li> <a href="{% url 'productos' %}"><i class="fas fa-boxes"></i> Productos</a> </li>
+            <li> <a href="{% url 'bodegas' %}"><i class="fas fa-archway"></i> Bodegas</a> </li>
+            <li> <a href="{% url 'bodegas-ingreso-stock' %}"><i class="fas fa-plus-square"></i> Ingreso de Stock</a> </li>
+            <li> <a class="logout" href="{% url 'Logout' %}"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</a> </li>
+           
+          
+        </ul>
+    </div>
+
+</nav>

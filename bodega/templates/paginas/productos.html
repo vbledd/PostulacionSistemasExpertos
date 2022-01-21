@@ -1,0 +1,68 @@
+{% extends "master/master.html" %}
+{% load static %}
+
+
+{%block titulo%}
+Productos
+{%endblock%}
+
+{%block contenido%}
+
+    <h1>Productos</h1>
+    <div  id="appProductos">
+        <button v-on:click="ventanaNuevo()">Nuevo Producto</button>
+
+        <table>
+            <tr>
+                <th>Id</th>
+                <th>Codigo</th>
+                <th>Nombre</th>
+                <th>Detalle</th>
+                <th>Valor</th>
+            
+            </tr>
+
+            <tr v-for="items in listadoProductos" v-on:click="ventanaEditar(items.pk)">
+                <td>${items.pk}</td>
+                <td>${items.fields.codigo}</td>
+                <td>${items.fields.nombre}</td>
+                <td>${items.fields.detalle}</td>
+                <td>${items.fields.valor}</td>
+    
+            </tr>
+        </table>
+    </div>
+    <script src="{% static 'js/productos.js' %}"></script>
+
+    
+{%endblock %}
+
+{%block emergente%}
+        <div>
+            <input type="hidden" id="csrf" value="{{csrf_token}}">
+
+            <input type="hidden" name="id" v-model="productos.id">
+
+            <p>Codigo Unico de Producto</p>
+            <input type="text" name="codigo" placeholder="Codigo" v-model="productos.codigo">
+
+            <p>Nombre del Producto</p>
+            <input type="text" name="nombre" placeholder="Nombre" v-model="productos.nombre">
+
+            <p>Detalles del Producto</p>
+            <textarea  name="detalle" rows="4" placeholder="Descripción del producto" v-model="productos.detalle"></textarea>
+
+            <p>Valor del Producto</p>
+            <input type="number" name="valor" placeholder="Valor" v-model="productos.valor">
+
+            <div class="btnEnviar" v-if="btn == 0">
+                <button v-on:click="productos.nuevoProducto()">Crear</button>
+            </div>
+
+            <div class="btnEnviar" v-else>
+                <button v-on:click="productos.editarProducto()">Actualizar</button>
+                <button v-on:click="productos.eliminarProducto()">Eliminar</button>
+            </div>
+
+        <div>
+{%endblock %}

@@ -1,0 +1,102 @@
+.resumen {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 100%;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.resumen .item {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 400px;
+  margin-bottom: 20px;
+  background-color: white;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 5px;
+  padding-bottom: 10px;
+  border: 1px solid #b8b7b7;
+}
+
+.resumen .item .item-nombre {
+  position: relative;
+  width: 100%;
+  height: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: white;
+  text-align: center;
+}
+
+.resumen .item .item-nombre h2 {
+  color: white;
+  font-size: 25px;
+  text-shadow: 0px 0px 9px rgba(0, 0, 0, 0), 0px 0px 17px #000000, 0px 0px 17px #000000;
+}
+
+.resumen .item .item-cantidad {
+  width: 50px;
+  height: 50px;
+  border-radius: 100px;
+  background-color: #6026be;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: white;
+  font-size: 17px;
+  font-weight: bold;
+  -webkit-transform: translateY(-25px);
+          transform: translateY(-25px);
+  border: 5px solid white;
+}
+
+.resumen .item .item-contenido table {
+  width: 350px;
+  margin-top: -10px;
+  border-collapse: collapse;
+}
+
+.resumen .item .item-contenido table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.resumen .item .item-contenido table th {
+  background-color: #6026be;
+  color: white;
+}
+
+.resumen .item .item-contenido table td, .resumen .item .item-contenido table th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+/*# sourceMappingURL=index.css.map */

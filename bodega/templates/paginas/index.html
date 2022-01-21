@@ -1,0 +1,80 @@
+{% extends "master/master.html" %}
+{% load static %}
+
+{%block titulo%}
+    Inicio
+{%endblock%}
+
+{%block header%}
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+{%endblock%}
+
+
+{%block contenido%}
+
+    <div id="appresumen" class="resumen">
+        
+        <div class="item">
+
+            <div class = "item-nombre" style="background-image: url('{% static 'img/productos.png'%}')">
+                <h2>Últimos Productos<h2>
+            </div>
+
+            <div class="item-cantidad">
+               ${cantidadProductos}
+            </div>
+            <div class="item-contenido">
+                <table>
+                    <tr>
+                        <th>Producto</th>
+                      
+                    </tr>
+
+                    <tr v-for="items in listadoProductos">
+                        <td>${items.fields.nombre}</td>
+                       
+                    </tr>
+                   
+
+
+                </table>
+            </div>
+        </div>
+
+        <div class="item">
+
+            <div class = "item-nombre" style="background-image: url('{% static 'img/bodegas.png'%}')">
+                <h2>Stock en Bodegas<h2>
+            </div>
+
+            <div class="item-cantidad">
+                ${stockBodegas}
+            </div>
+            <div class="item-contenido">
+                <table>
+                    <tr>
+                        <th>Bodega</th>
+                        <th>Productos</th>
+                       
+                    </tr>
+
+                    <tr v-for="items in listadoBodegas">
+                        <td>${items.nombre}</td>
+                        <td>${items.cantidad}</td>
+                        
+                    </tr>
+                    
+                   
+
+
+                </table>
+            </div>
+        </div>
+
+        
+    </div>
+    <script src="{% static 'js/index.js' %}"></script>
+{%endblock %}
+
+
+

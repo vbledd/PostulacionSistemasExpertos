@@ -1,0 +1,116 @@
+.navbar {
+  width: 200px;
+  position: fixed;
+  top: 0px;
+  z-index: 200;
+  height: 100vh;
+  background-color: #363636;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  overflow: hidden;
+}
+
+.navbar .usuarioLogeado {
+  width: 200px;
+  height: 170px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #6026be;
+  margin-bottom: 50px;
+}
+
+.navbar .usuarioLogeado .ul-nombre {
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.navbar .usuarioLogeado .ul-email {
+  margin-top: -18px;
+  font-size: 12px;
+}
+
+.navbar .usuarioLogeado .ul-img {
+  position: absolute;
+  -webkit-transform: translateY(70px);
+          transform: translateY(70px);
+  width: 85px;
+  height: 85px;
+  border: 6px solid #363636;
+  border-radius: 100px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.navbar p {
+  font-size: 20px;
+  color: white;
+}
+
+.navbar .menu {
+  position: relative;
+  width: 200px;
+  top: 100hv;
+  height: 100vh;
+  overflow-y: hidden;
+  padding: 0px;
+}
+
+.navbar .menu ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+.navbar .menu ul li {
+  left: 0px;
+}
+
+.navbar .menu ul .logout {
+  background-color: #F15A24;
+}
+
+.navbar .menu ul a {
+  display: block;
+  height: 30px;
+  text-decoration: none;
+  color: white;
+  font-size: 14px;
+  padding-left: 30px;
+  padding-top: 15px;
+  -webkit-transition: background-color 600ms, color 500ms;
+  transition: background-color 600ms, color 500ms;
+}
+
+.navbar .menu ul a:hover {
+  background-color: white;
+  color: #363636;
+}
+/*# sourceMappingURL=menu.css.map */

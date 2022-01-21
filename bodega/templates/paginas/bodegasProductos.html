@@ -1,0 +1,84 @@
+{% extends "master/master.html" %}
+{% load static %}
+
+
+{%block titulo%}
+Listado de productos en bodega
+{%endblock%}
+
+{%block contenido%}
+
+    <h1>Listado de productos en:  {{bodega.nombre}}</h1>
+    
+    <input id="idBodega" type="hidden" value="{{bodega.id}}">
+   
+    <div  id="appProductos">
+        <button v-on:click="ventanaNuevo()">Agregar Producto en Bodega</button>
+
+        
+
+        <table>
+            <tr>
+                
+                <th>Codigo</th>
+                <th>Nombre</th>
+                <th>Detalle</th>
+                <th>Stock</th>
+               
+            
+            </tr>
+
+            <tr v-for="items in listadoProductos" v-on:click="seleccionar2(items.fields.idProducto[0],items.fields.idProducto[2])">
+                <td>${items.fields.idProducto[1]}</td>
+                <td>${items.fields.idProducto[2]}</td>
+                <td>${items.fields.idProducto[3]}</td>
+                <td>${items.fields.stock}</td>
+               
+    
+            </tr>
+        </table>
+    </div>
+    <script src="{% static 'js/bodegasProductos.js' %}"></script>
+
+    
+    
+{%endblock %}
+
+{%block emergente%}
+        
+            <input type="hidden" id="csrf" value="{{csrf_token}}">
+
+            
+            <p>Producto Seleccionado</p>
+            <input type="text" v-model="productos.seleccionado" readonly>
+            <p>Stock final en bodega</p>
+            <input type="text" v-model="productos.stockFinal" readonly>
+            <p>Ingresar Stock</p>
+            <input type="number" v-model="productos.stock" v-on:keyup="productos.calcularStock()">
+
+            <div class="btnEnviar">
+                <button v-on:click="productos.agregarItem">Ingresar</button>
+            </div>
+
+            <p>Buscador</p>
+            <input type="text" v-model="productos.buscar" v-on:keyup="productos.buscador()"><br>
+            
+            <table>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Detalle</th>
+   
+                </tr>
+
+                <tr v-for="items in productos.productosBuscados" v-on:click="productos.seleccionar(items.pk,items.fields.nombre)">
+                    <td>${items.fields.nombre}</td>
+                    <td>${items.fields.detalle}</td>
+                </tr>
+            </table>
+
+
+            
+
+        
+{%endblock %}
+

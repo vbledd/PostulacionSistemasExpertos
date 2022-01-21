@@ -1,0 +1,72 @@
+{% load static %}  
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge"> 
+  <title>
+    Bodega - 
+    {% block titulo %}
+    {% endblock %}
+  </title>
+
+  <link rel="stylesheet" href="{% static 'master/css/main.css' %}">
+  <link rel="stylesheet" href="{% static 'master/css/menu.css' %}">
+
+  <script src="https://kit.fontawesome.com/4be2f9d56b.js" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/axios@0.24.0/dist/axios.min.js"></script>
+  <script src="{% static 'js/vue.js' %}"></script>
+
+{% block header %}
+{% endblock %}
+
+<script>
+
+function ir(url){
+  window.location.href = (url);
+}
+
+function alerta(url) {
+
+if (window.confirm("Desea Eliminar este elemento?, esto podria afectar a registros que dependan de este.")) {
+ 
+  window.location.href = (url);
+}
+ 
+}
+
+</script>
+</head>
+
+<body>
+  
+    {% include 'master/menu.html' %}
+    
+
+    <div id="appContenido" class="contenido">
+
+        {% block contenido %}
+        {% endblock %}
+
+    </div>
+
+    <div id="appEmergente" :class="bmenu" class="emergente">
+      <div class="emergenteContenido">
+        <button v-on:click="menu()">Cerrar</button>
+        <h2>${titulo}</h2>
+        {%block emergente%}
+        {%endblock %}
+      </div>
+  </div>
+   
+    
+
+    <script src="{% static 'js/emergente.js' %}"></script>
+
+    <div class="footer">
+        <p>©2022 Sistema Bodega Postulación Sistemas Expertos - Miguel Salinas | +56 9 3019 7507</p>
+    </div>
+
+</body>
+</html>

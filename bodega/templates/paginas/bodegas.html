@@ -1,0 +1,62 @@
+{% extends "master/master.html" %}
+{% load static %}
+
+
+{%block titulo%}
+Bodegas
+{%endblock%}
+
+{%block contenido%}
+
+    <h1>Bodegas</h1>
+    <div  id="appBodegas">
+        <button v-on:click="ventanaNuevo()">Nueva Bodega</button>
+
+        <table>
+            <tr>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Dirección</th>
+              
+            
+            </tr>
+
+            <tr v-for="items in listadoBodegas" v-on:click="ventanaEditar(items.pk)">
+                <td>${items.pk}</td>
+                <td>${items.fields.nombre}</td>
+                <td>${items.fields.direccion}</td>
+                
+    
+            </tr>
+        </table>
+    </div>
+    <script src="{% static 'js/bodegas.js' %}"></script>
+
+    
+{%endblock %}
+
+{%block emergente%}
+        <div>
+            <input type="hidden" id="csrf" value="{{csrf_token}}">
+
+            <input type="hidden" name="id" v-model="bodegas.id">
+
+            
+            <p>Nombre de la Bodega</p>
+            <input type="text" name="nombre" placeholder="Nombre" v-model="bodegas.nombre">
+
+            <p>Dirección de la Bodega</p>
+            <input type="text" name="direccion" placeholder="direccion" v-model="bodegas.direccion">
+
+
+            <div class="btnEnviar" v-if="btn == 0">
+                <button v-on:click="bodegas.nuevo()">Crear</button>
+            </div>
+
+            <div class="btnEnviar" v-else>
+                <button v-on:click="bodegas.editar()">Actualizar</button>
+                <button v-on:click="bodegas.eliminar()">Eliminar</button>
+            </div>
+
+        <div>
+{%endblock %}
